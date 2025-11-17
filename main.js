@@ -1,10 +1,7 @@
-// main.js - small helpers for nav, year, and contact form
 document.addEventListener('DOMContentLoaded', () => {
-  // set year in footer
   const years = document.querySelectorAll('[id^="year"]');
   years.forEach(el => el.textContent = new Date().getFullYear());
 
-  // nav toggle for small screens
   const nav = document.querySelector('.nav');
   const navToggle = document.getElementById('navToggle');
   if (navToggle) {
@@ -13,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // simple contact form handler (no server)
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -27,14 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         msgEl.style.color = '#ff8b8b';
         return;
       }
-      // Here we simply show a success message. Replace with AJAX to your server or email service.
-      msgEl.textContent = 'Thanks Your message is sent .';
+      msgEl.textContent = 'Thanks! Your message has been sent.';
       msgEl.style.color = '#9ef1b7';
       form.reset();
+      setTimeout(() => {
+        msgEl.textContent = '';
+      }, 5000);
     });
   }
 
-  // simple reveal animation for elements
   const reveal = () => {
     const items = document.querySelectorAll('.card, .project-card, .about-avatar, .hero-text');
     const windowH = window.innerHeight;
@@ -46,32 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 600ms ease';
       } else {
         el.style.transform = 'translateY(12px)';
-        el.style.opacity = '0.0';
+        el.style.opacity = '0';
       }
     });
   };
   reveal();
   window.addEventListener('scroll', reveal);
   window.addEventListener('resize', reveal);
-});
-document.addEventListener("DOMContentLoaded", () => {
 
   const buttons = document.querySelectorAll(".detail-btn");
-
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-
       const box = btn.nextElementSibling;
-
       box.classList.toggle("show");
-
-      // Change button text
-      if (box.classList.contains("show")) {
-        btn.textContent = "Hide Details";
-      } else {
-        btn.textContent = "Details";
-      }
+      btn.textContent = box.classList.contains("show") ? "Hide Details" : "Details";
     });
   });
-
 });
