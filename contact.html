@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Contact me your next project starts here.</a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificate.html">certificate</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active cta">Contact</a>
+        <button id="navToggle" class="nav-toggle" aria-label="toggle navigation">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="contact">
+      <h1>Contact Me</h1>
+      <p>You can reach me via email or write a message below.</p>
+
+      <form class="contact-form" id="contactForm" action="#" novalidate>
+        <label>
+          <span>Name</span>
+          <input type="text" id="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea id="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year4"></span> Ali Asghar</p>
+      <div class="social">
+        <a href="https://wa.me/923053361964" target="_blank" aria-label="whatsapp">WhatsApp</a>
+        <a href="https://www.facebook.com/asgharjan964" target="_blank" aria-label="facebook">Facebook</a>
+        <a href="https://www.linkedin.com/in/ali-asghar-mahar-1706b4274" target="_blank"
+          aria-label="linkedin">LinkedIn</a>
+        <a href="https://github.com/asgharjan964" target="_blank" aria-label="github">GitHub</a>
+      </div>
+    </div>
+
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
